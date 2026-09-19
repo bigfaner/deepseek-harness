@@ -1,5 +1,5 @@
 
-added 4 packages in 918ms
+added 4 packages in 1s
 npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
 npm warn install-scripts   koffi@3.1.1 (install: node ./cnoke.cjs -P . -D src/koffi --prebuild --release)
 npm warn install-scripts   node-pty@1.2.0-beta.15 (install: node scripts/prebuild.js || node-gyp rebuild; postinstall: node scripts/post-install.js)
