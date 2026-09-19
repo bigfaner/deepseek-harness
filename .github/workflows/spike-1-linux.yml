@@ -1,0 +1,73 @@
+name: Spike 1 Linux native modules
+
+# Task 1.1 spike (dsh-forge): node-pty/koffi Linux prebuild feasibility,
+# desktop-host headless boot smoke on Linux, preliminary runtime size data.
+# Branch is upstream c36ba648 plus only this workflow and scripts/spike-1-linux.
+on:
+  workflow_dispatch:
+  push:
+    branches: [spike/1.1-linux]
+
+permissions:
+  contents: read
+
+jobs:
+  native-modules:
+    name: native prebuilds (node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['22', '24']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install pinned native modules
+        run: |
+          mkdir -p ~/native-spike && cd ~/native-spike
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund node-pty@1.2.0-beta.15 koffi@3.1.1
+      - name: Run native smoke
+        run: node "$GITHUB_WORKSPACE/scripts/spike-1-linux/native-smoke.mjs"
+        working-directory: ~/native-spike
+      - name: Record environment
+        run: |
+          uname -a
+          node -p 'process.versions'
+          ldd --version | head -1
+
+  desktop-host:
+    name: desktop-host Linux boot smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.7.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - name: Install desktop-host dependency closure
+        run: pnpm install --filter @deepseek-ai/dsh-desktop-host... --frozen-lockfile
+        env:
+          DSH_TELEMETRY_DISABLED: '1'
+          CI: 'true'
+      - name: Build host libraries
+        run: npm run build:lib:host
+        env:
+          DSH_TELEMETRY_DISABLED: '1'
+      - name: desktop-host boot smoke
+        run: node "$GITHUB_WORKSPACE/scripts/spike-1-linux/host-smoke.mjs" "$GITHUB_WORKSPACE"
+      - name: Preliminary size report
+        run: node "$GITHUB_WORKSPACE/scripts/spike-1-linux/size-report.mjs" "$GITHUB_WORKSPACE"
+      - name: Capture environment
+        if: always()
+        run: |
+          uname -a
+          node -p 'process.versions'
+          ldd --version | head -1
+          df -h "$GITHUB_WORKSPACE" | tail -1
