@@ -1,38 +1,97 @@
 native/system/packages/darwin-arm64      | [WARN] Unsupported platform: wanted: {"cpu":["arm64"],"os":["darwin"],"libc":["any"]} (current: {"os":"linux","cpu":"x64","libc":"glibc"})
 native/system/packages/darwin-x64        | [WARN] Unsupported platform: wanted: {"cpu":["x64"],"os":["darwin"],"libc":["any"]} (current: {"os":"linux","cpu":"x64","libc":"glibc"})
 native/system/packages/linux-arm64       | [WARN] Unsupported platform: wanted: {"cpu":["arm64"],"os":["linux"],"libc":["any"]} (current: {"os":"linux","cpu":"x64","libc":"glibc"})
-Scope: 279 of 314 workspace projects
-.                                        | [WARN] There are cyclic workspace dependencies: /home/runner/work/deepseek-harness/deepseek-harness/vendor/cordis, /home/runner/work/deepseek-harness/deepseek-harness/vendor/include; /home/runner/work/deepseek-harness/deepseek-harness/packages/llm/token-meter, /home/runner/work/deepseek-harness/deepseek-harness/packages/compaction/compaction-image-offload, /home/runner/work/deepseek-harness/deepseek-harness/packages/compaction/compaction-basic, /home/runner/work/deepseek-harness/deepseek-harness/packages/compaction/compaction-tool-result-pruner; /home/runner/work/deepseek-harness/deepseek-harness/packages/core/agent-loop, /home/runner/work/deepseek-harness/deepseek-harness/packages/llm/llm-pi-ai, /home/runner/work/deepseek-harness/deepseek-harness/packages/llm/llm-deepseek, /home/runner/work/deepseek-harness/deepseek-harness/packages/session/session-log-deepseek, /home/runner/work/deepseek-harness/deepseek-harness/packages/feedback/command-feedback, /home/runner/work/deepseek-harness/deepseek-harness/packages/test-support/agent-loop-testkit; /home/runner/work/deepseek-harness/deepseek-harness/packages/subagent/subagent-spawn-in-process, /home/runner/work/deepseek-harness/deepseek-harness/packages/subagent/tool-subagent; /home/runner/work/deepseek-harness/deepseek-harness/packages/sandbox/sandbox-local, /home/runner/work/deepseek-harness/deepseek-harness/packages/sandbox/sandbox-windows-acl; /home/runner/work/deepseek-harness/deepseek-harness/packages/client/ui-agent-preset, /home/runner/work/deepseek-harness/deepseek-harness/packages/test-support/client-runtime, /home/runner/work/deepseek-harness/deepseek-harness/packages/bundle/web-app, /home/runner/work/deepseek-harness/deepseek-harness/packages/client/ui-settings-plugin-inventory; /home/runner/work/deepseek-harness/deepseek-harness/packages/api/remotes, /home/runner/work/deepseek-harness/deepseek-harness/packages/client/file-upload; /home/runner/work/deepseek-harness/deepseek-harness/packages/client/ui-conversation, /home/runner/work/deepseek-harness/deepseek-harness/packages/client/ui-workspace, /home/runner/work/deepseek-harness/deepseek-harness/packages/client/ui-sidebar
+Scope: all 314 workspace projects
+[WARN] There are cyclic workspace dependencies: /home/runner/work/deepseek-harness/deepseek-harness/apps/web, /home/runner/work/deepseek-harness/deepseek-harness/packages/test-support/client-runtime, /home/runner/work/deepseek-harness/deepseek-harness/packages/bundle/web-app; /home/runner/work/deepseek-harness/deepseek-harness/packages/api/remotes, /home/runner/work/deepseek-harness/deepseek-harness/packages/client/file-upload; /home/runner/work/deepseek-harness/deepseek-harness/packages/client/ui-conversation, /home/runner/work/deepseek-harness/deepseek-harness/packages/client/ui-workspace, /home/runner/work/deepseek-harness/deepseek-harness/packages/client/ui-sidebar; /home/runner/work/deepseek-harness/deepseek-harness/packages/compaction/compaction-basic, /home/runner/work/deepseek-harness/deepseek-harness/packages/compaction/compaction-image-offload; /home/runner/work/deepseek-harness/deepseek-harness/packages/core/agent-loop, /home/runner/work/deepseek-harness/deepseek-harness/packages/llm/llm-pi-ai, /home/runner/work/deepseek-harness/deepseek-harness/packages/llm/llm-deepseek, /home/runner/work/deepseek-harness/deepseek-harness/packages/session/session-log-deepseek, /home/runner/work/deepseek-harness/deepseek-harness/packages/feedback/command-feedback, /home/runner/work/deepseek-harness/deepseek-harness/packages/test-support/agent-loop-testkit; /home/runner/work/deepseek-harness/deepseek-harness/packages/sandbox/sandbox-local, /home/runner/work/deepseek-harness/deepseek-harness/packages/sandbox/sandbox-windows-acl; /home/runner/work/deepseek-harness/deepseek-harness/packages/ssh/fs-ssh, /home/runner/work/deepseek-harness/deepseek-harness/packages/ssh/ssh; /home/runner/work/deepseek-harness/deepseek-harness/packages/subagent/subagent-spawn-in-process, /home/runner/work/deepseek-harness/deepseek-harness/packages/subagent/tool-subagent; /home/runner/work/deepseek-harness/deepseek-harness/vendor/cordis, /home/runner/work/deepseek-harness/deepseek-harness/vendor/include
 ? Verifying lockfile against supply-chain policies (1607 entries)...
 Lockfile is up to date, resolution step is skipped
 Progress: resolved 1, reused 0, downloaded 0, added 0
-.                                        |    +1032 ++++++++++++++++++++++++++++
-Progress: resolved 1032, reused 224, downloaded 0, added 0
-Progress: resolved 1032, reused 586, downloaded 0, added 0
-Progress: resolved 1032, reused 635, downloaded 130, added 8
-Progress: resolved 1032, reused 635, downloaded 268, added 20
-Progress: resolved 1032, reused 635, downloaded 390, added 109
-Progress: resolved 1032, reused 635, downloaded 392, added 457
-✓ Lockfile passes supply-chain policies (1607 entries in 7s)
-Progress: resolved 1032, reused 635, downloaded 392, added 1032, done
+Packages: +1317
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 1317, reused 633, downloaded 0, added 0
+Progress: resolved 1317, reused 635, downloaded 83, added 8
+Progress: resolved 1317, reused 635, downloaded 312, added 31
+Progress: resolved 1317, reused 635, downloaded 421, added 39
+Progress: resolved 1317, reused 635, downloaded 566, added 51
+Progress: resolved 1317, reused 635, downloaded 674, added 104
+✓ Lockfile passes supply-chain policies (1607 entries in 8s)
+Progress: resolved 1317, reused 635, downloaded 675, added 510
+Progress: resolved 1317, reused 635, downloaded 676, added 1112
+Progress: resolved 1317, reused 635, downloaded 677, added 1317, done
 .../.pnpm/koffi@3.1.1/node_modules/koffi install$ node ./cnoke.cjs -P . -D src/koffi --prebuild --release
 .../node_modules/node-pty install$ node scripts/prebuild.js || node-gyp rebuild
-.../esbuild@0.25.12/node_modules/esbuild postinstall$ node install.js
-.../lefthook@2.1.9/node_modules/lefthook postinstall$ node postinstall.js
 .../node_modules/node-pty install: [32m> Checking prebuilds...[0m
+.../.pnpm/koffi@3.1.1/node_modules/koffi install: Done
 .../node_modules/node-pty install: Done
 .../node_modules/node-pty postinstall$ node scripts/post-install.js
-.../.pnpm/koffi@3.1.1/node_modules/koffi install: Done
-.../esbuild@0.25.12/node_modules/esbuild postinstall: Done
-.../lefthook@2.1.9/node_modules/lefthook postinstall: Done
+.../esbuild@0.25.12/node_modules/esbuild postinstall$ node install.js
+.../lefthook@2.1.9/node_modules/lefthook postinstall$ node postinstall.js
 .../node_modules/node-pty postinstall: [32m> Cleaning release folder...[0m
 .../node_modules/node-pty postinstall: [32m> Moving conpty.dll...[0m
 .../node_modules/node-pty postinstall:   SKIPPED (not Windows)
 .../node_modules/node-pty postinstall: Done
+.../esbuild@0.21.5/node_modules/esbuild postinstall$ node install.js
+.../lefthook@2.1.9/node_modules/lefthook postinstall: Done
+.../esbuild@0.25.12/node_modules/esbuild postinstall: Done
+.../esbuild@0.21.5/node_modules/esbuild postinstall: Done
 [WARN] Failed to create bin at /home/runner/work/deepseek-harness/deepseek-harness/apps/desktop-host/node_modules/.bin/dsh. ENOENT: no such file or directory, open '/home/runner/work/deepseek-harness/deepseek-harness/apps/cli/lib/bin.js'
+[WARN] Failed to create bin at /home/runner/work/deepseek-harness/deepseek-harness/packages/sdk/client/node_modules/.bin/dsh. ENOENT: no such file or directory, open '/home/runner/work/deepseek-harness/deepseek-harness/apps/cli/lib/bin.js'
+[WARN] Failed to create bin at /home/runner/work/deepseek-harness/deepseek-harness/python/sdk-runtime/node_modules/.bin/dsh. ENOENT: no such file or directory, open '/home/runner/work/deepseek-harness/deepseek-harness/apps/cli/lib/bin.js'
+
+devDependencies:
++ @deepseek-ai/dsh-agent 0.1.6-alpha.2 <- packages/core/agent
++ @deepseek-ai/dsh-browser-use 0.1.6-alpha.2 <- packages/browser-use/browser-use
++ @deepseek-ai/dsh-computer-use 0.1.6-alpha.2 <- packages/computer-use/computer-use
++ @deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp 0.1.6-alpha.2 <- packages/experimental/browser-use-chrome-devtools-mcp
++ @deepseek-ai/dsh-experimental-browser-use-playwright-mcp 0.1.6-alpha.2 <- packages/experimental/browser-use-playwright-mcp
++ @deepseek-ai/dsh-experimental-browser-use-runtime 0.1.6-alpha.2 <- packages/experimental/browser-use-runtime
++ @deepseek-ai/dsh-experimental-browser-use-stagehand-native 0.1.6-alpha.2 <- packages/experimental/browser-use-stagehand-native
++ @deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp 0.1.6-alpha.2 <- packages/experimental/computer-use-cua-driver-mcp
++ @deepseek-ai/dsh-experimental-computer-use-cua-driver-native 0.1.6-alpha.2 <- packages/experimental/computer-use-cua-driver-native
++ @deepseek-ai/dsh-llm-replay 0.1.6-alpha.2 <- packages/test-support/llm-replay
++ @deepseek-ai/dsh-skill-office 0.1.6-alpha.2 <- packages/skill/skill-office
++ @deepseek-ai/dsh-tool-session-query 0.1.6-alpha.2 <- packages/session-query/tool-session-query
++ @deepseek-ai/dsh-web-fetch-http 0.1.6-alpha.2 <- packages/web/web-fetch-http
++ @stylistic/eslint-plugin 5.10.0
++ @testing-library/dom 10.4.1
++ @testing-library/react 16.3.2
++ @types/js-yaml 4.0.9
++ @types/jsdom 28.0.3
++ @types/mdast 4.0.4
++ @types/node 22.20.0
++ @types/spdx-expression-parse 4.0.0
++ @vitest/coverage-v8 4.1.8
++ @yao-pkg/pkg 6.21.0
++ @yarnpkg/cli-dist 4.17.1
++ eslint-plugin-sonarjs 4.1.0
++ execa 10.0.0
++ fast-check 4.8.0
++ istanbul-lib-report 3.0.1
++ js-yaml 4.2.0
++ jscpd 5.0.12
++ jsdom 29.1.1
++ lefthook 2.1.9
++ lightningcss 1.32.0
++ mdast-util-from-markdown 2.0.3
++ mdast-util-gfm 3.1.0
++ mermaid 11.16.0
++ micromark-extension-gfm 3.0.0
++ oxlint 1.76.0
++ oxlint-tsgolint 7.0.2001
++ publint 0.3.21
++ smol-toml 1.7.1
++ spdx-expression-parse 5.0.0
++ tsdown 0.22.2
++ tsx 4.22.4
++ typescript 6.0.3
++ vite-tsconfig-paths 6.1.1
++ vitest 4.1.8
+
 packages/subprocess/subprocess-local postinstall$ node scripts/ensure-spawn-helper.mjs
 packages/subprocess/subprocess-local postinstall: Done
 . postinstall$ node scripts/install-lefthook.mjs
 . postinstall: Done
 [WARN] Failed to create bin at /home/runner/work/deepseek-harness/deepseek-harness/apps/desktop-host/node_modules/.bin/dsh. ENOENT: no such file or directory, open '/home/runner/work/deepseek-harness/deepseek-harness/apps/desktop-host/node_modules/@deepseek-ai/dsh/lib/bin.js'
-Done in 12.2s using pnpm v11.7.0
+[WARN] Failed to create bin at /home/runner/work/deepseek-harness/deepseek-harness/packages/sdk/client/node_modules/.bin/dsh. ENOENT: no such file or directory, open '/home/runner/work/deepseek-harness/deepseek-harness/packages/sdk/client/node_modules/@deepseek-ai/dsh/lib/bin.js'
+[WARN] Failed to create bin at /home/runner/work/deepseek-harness/deepseek-harness/python/sdk-runtime/node_modules/.bin/dsh. ENOENT: no such file or directory, open '/home/runner/work/deepseek-harness/deepseek-harness/python/sdk-runtime/node_modules/@deepseek-ai/dsh/lib/bin.js'
+Done in 16.8s using pnpm v11.7.0
