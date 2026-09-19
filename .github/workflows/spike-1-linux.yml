@@ -30,18 +30,18 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Install pinned native modules
         run: |
-          mkdir -p ~/native-spike "$SPIKE_OUT" && cd ~/native-spike
+          mkdir -p /tmp/native-spike "$SPIKE_OUT" && cd ~/native-spike
           npm init -y >/dev/null
           npm install --no-audit --no-fund node-pty@1.2.0-beta.15 koffi@3.1.1 2>&1 | tee "$SPIKE_OUT/install-node${{ matrix.node }}.log"
       - name: Run native smoke
         run: set -o pipefail; node "$GITHUB_WORKSPACE/scripts/spike-1-linux/native-smoke.mjs" 2>&1 | tee "$SPIKE_OUT/smoke-node${{ matrix.node }}.log" || echo "smoke exited non-zero (recorded in log)"
-        working-directory: ~/native-spike
+        working-directory: /tmp/native-spike
       - name: Record environment
         run: |
           { uname -a; node -p 'process.versions'; ldd --version | head -1; } | tee "$SPIKE_OUT/env-node${{ matrix.node }}.log"
       - name: Publish results
         if: always()
-        run: .github/workflows/spike-publish.sh "native-node${{ matrix.node }}"
+        run: bash .github/workflows/spike-publish.sh "native-node${{ matrix.node }}"
 
   desktop-host:
     name: desktop-host Linux boot smoke
@@ -77,5 +77,5 @@ jobs:
           { uname -a; node -p 'process.versions'; ldd --version | head -1; df -h "$GITHUB_WORKSPACE" | tail -1; } | tee "$SPIKE_OUT/host-env.log"
       - name: Publish results
         if: always()
-        run: .github/workflows/spike-publish.sh "desktop-host"
+        run: bash .github/workflows/spike-publish.sh "desktop-host"
 

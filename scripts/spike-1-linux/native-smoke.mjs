@@ -24,7 +24,8 @@ import { dirname, join } from 'node:path'
 import { createRequire } from 'node:module'
 import assert from 'node:assert/strict'
 
-const require = createRequire(import.meta.url)
+// Resolve packages from the scratch install project (cwd), not this script's location.
+const require = createRequire(join(process.cwd(), 'package.json'))
 const report = (phase, data) => {
   console.log(`SPIKE_RESULT ${JSON.stringify({ phase, platform: process.platform, arch: process.arch, node: process.versions.node, ...data })}`)
 }

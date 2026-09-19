@@ -11,7 +11,7 @@
  */
 
 import { spawn } from 'node:child_process'
-import { mkdirSync, symlinkSync, rmSync } from 'node:fs'
+import { mkdirSync, symlinkSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 
@@ -22,6 +22,8 @@ rmSync(scratch, { recursive: true, force: true })
 const projectDir = join(scratch, 'project')
 const payloadDir = join(scratch, 'payload')
 mkdirSync(projectDir, { recursive: true })
+// The profile manifest must exist; an empty bundle list is valid.
+writeFileSync(join(projectDir, 'package.json'), `${JSON.stringify({ name: 'spike-project', private: true })}\n`)
 mkdirSync(payloadDir, { recursive: true })
 mkdirSync(join(payloadDir, 'primary-runtime'), { recursive: true })
 // office.ts resolves the skill asset root as dirname(source)/office-skills.
