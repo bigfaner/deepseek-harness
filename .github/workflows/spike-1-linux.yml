@@ -58,15 +58,18 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
-      - name: Install desktop-host dependency closure
+      - name: Install workspace (filtered install lacks devDeps the build needs)
         run: |
           mkdir -p "$SPIKE_OUT"
-          pnpm install --filter @deepseek-ai/dsh-desktop-host... --frozen-lockfile 2>&1 | tee "$SPIKE_OUT/host-install.log"
+          set -o pipefail
+          pnpm install --frozen-lockfile 2>&1 | tee "$SPIKE_OUT/host-install.log"
         env:
           DSH_TELEMETRY_DISABLED: '1'
           CI: 'true'
-      - name: Build host libraries
-        run: npm run build:lib 2>&1 | tee "$SPIKE_OUT/host-build.log"
+      - name: Build host and client libraries
+        run: |
+          set -o pipefail
+          npm run build:lib 2>&1 | tee "$SPIKE_OUT/host-build.log"
         env:
           DSH_TELEMETRY_DISABLED: '1'
       - name: desktop-host boot smoke
