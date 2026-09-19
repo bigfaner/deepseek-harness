@@ -7,28 +7,28 @@ Scope: 279 of 314 workspace projects
 Lockfile is up to date, resolution step is skipped
 Progress: resolved 1, reused 0, downloaded 0, added 0
 .                                        |    +1032 ++++++++++++++++++++++++++++
-Progress: resolved 1032, reused 282, downloaded 0, added 0
-Progress: resolved 1032, reused 635, downloaded 5, added 0
-Progress: resolved 1032, reused 635, downloaded 128, added 8
-Progress: resolved 1032, reused 635, downloaded 268, added 19
-Progress: resolved 1032, reused 635, downloaded 391, added 45
-Progress: resolved 1032, reused 635, downloaded 391, added 542
-✓ Lockfile passes supply-chain policies (1607 entries in 7.2s)
+Progress: resolved 1032, reused 224, downloaded 0, added 0
+Progress: resolved 1032, reused 586, downloaded 0, added 0
+Progress: resolved 1032, reused 635, downloaded 130, added 8
+Progress: resolved 1032, reused 635, downloaded 268, added 20
+Progress: resolved 1032, reused 635, downloaded 390, added 109
+Progress: resolved 1032, reused 635, downloaded 392, added 457
+✓ Lockfile passes supply-chain policies (1607 entries in 7s)
 Progress: resolved 1032, reused 635, downloaded 392, added 1032, done
 .../.pnpm/koffi@3.1.1/node_modules/koffi install$ node ./cnoke.cjs -P . -D src/koffi --prebuild --release
 .../node_modules/node-pty install$ node scripts/prebuild.js || node-gyp rebuild
-.../lefthook@2.1.9/node_modules/lefthook postinstall$ node postinstall.js
 .../esbuild@0.25.12/node_modules/esbuild postinstall$ node install.js
+.../lefthook@2.1.9/node_modules/lefthook postinstall$ node postinstall.js
 .../node_modules/node-pty install: [32m> Checking prebuilds...[0m
 .../node_modules/node-pty install: Done
 .../node_modules/node-pty postinstall$ node scripts/post-install.js
-.../lefthook@2.1.9/node_modules/lefthook postinstall: Done
 .../.pnpm/koffi@3.1.1/node_modules/koffi install: Done
+.../esbuild@0.25.12/node_modules/esbuild postinstall: Done
+.../lefthook@2.1.9/node_modules/lefthook postinstall: Done
 .../node_modules/node-pty postinstall: [32m> Cleaning release folder...[0m
 .../node_modules/node-pty postinstall: [32m> Moving conpty.dll...[0m
 .../node_modules/node-pty postinstall:   SKIPPED (not Windows)
 .../node_modules/node-pty postinstall: Done
-.../esbuild@0.25.12/node_modules/esbuild postinstall: Done
 [WARN] Failed to create bin at /home/runner/work/deepseek-harness/deepseek-harness/apps/desktop-host/node_modules/.bin/dsh. ENOENT: no such file or directory, open '/home/runner/work/deepseek-harness/deepseek-harness/apps/cli/lib/bin.js'
 packages/subprocess/subprocess-local postinstall$ node scripts/ensure-spawn-helper.mjs
 packages/subprocess/subprocess-local postinstall: Done
