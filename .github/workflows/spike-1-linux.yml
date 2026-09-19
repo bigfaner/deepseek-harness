@@ -3,13 +3,18 @@ name: Spike 1 Linux native modules
 # Task 1.1 spike (dsh-forge): node-pty/koffi Linux prebuild feasibility,
 # desktop-host headless boot smoke on Linux, preliminary runtime size data.
 # Branch is upstream c36ba648 plus only this workflow and scripts/spike-1-linux.
+# Results (logs) are committed back to this branch because the fork's Actions
+# logs are not retrievable via API from this environment.
 on:
   workflow_dispatch:
   push:
     branches: [spike/1.1-linux]
 
 permissions:
-  contents: read
+  contents: write
+
+env:
+  SPIKE_OUT: /tmp/spike-out
 
 jobs:
   native-modules:
@@ -26,17 +31,18 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Install pinned native modules
         run: |
-          mkdir -p ~/native-spike && cd ~/native-spike
+          mkdir -p ~/native-spike "$SPIKE_OUT" && cd ~/native-spike
           npm init -y >/dev/null
-          npm install --no-audit --no-fund node-pty@1.2.0-beta.15 koffi@3.1.1
+          npm install --no-audit --no-fund node-pty@1.2.0-beta.15 koffi@3.1.1 2>&1 | tee "$SPIKE_OUT/install-node${{ matrix.node }}.log"
       - name: Run native smoke
-        run: node "$GITHUB_WORKSPACE/scripts/spike-1-linux/native-smoke.mjs"
+        run: node "$GITHUB_WORKSPACE/scripts/spike-1-linux/native-smoke.mjs" 2>&1 | tee "$SPIKE_OUT/smoke-node${{ matrix.node }}.log"
         working-directory: ~/native-spike
       - name: Record environment
         run: |
-          uname -a
-          node -p 'process.versions'
-          ldd --version | head -1
+          { uname -a; node -p 'process.versions'; ldd --version | head -1; } | tee "$SPIKE_OUT/env-node${{ matrix.node }}.log"
+      - name: Publish results
+        if: always()
+        run: .github/workflows/spike-publish.sh "native-node${{ matrix.node }}"
 
   desktop-host:
     name: desktop-host Linux boot smoke
@@ -52,22 +58,27 @@ jobs:
           node-version: 24
           cache: pnpm
       - name: Install desktop-host dependency closure
-        run: pnpm install --filter @deepseek-ai/dsh-desktop-host... --frozen-lockfile
+        run: |
+          mkdir -p "$SPIKE_OUT"
+          pnpm install --filter @deepseek-ai/dsh-desktop-host... --frozen-lockfile 2>&1 | tee "$SPIKE_OUT/host-install.log"
         env:
           DSH_TELEMETRY_DISABLED: '1'
           CI: 'true'
       - name: Build host libraries
-        run: npm run build:lib:host
+        run: npm run build:lib:host 2>&1 | tee "$SPIKE_OUT/host-build.log"
         env:
           DSH_TELEMETRY_DISABLED: '1'
       - name: desktop-host boot smoke
-        run: node "$GITHUB_WORKSPACE/scripts/spike-1-linux/host-smoke.mjs" "$GITHUB_WORKSPACE"
+        run: node "$GITHUB_WORKSPACE/scripts/spike-1-linux/host-smoke.mjs" "$GITHUB_WORKSPACE" 2>&1 | tee "$SPIKE_OUT/host-smoke.log"
       - name: Preliminary size report
-        run: node "$GITHUB_WORKSPACE/scripts/spike-1-linux/size-report.mjs" "$GITHUB_WORKSPACE"
+        run: node "$GITHUB_WORKSPACE/scripts/spike-1-linux/size-report.mjs" "$GITHUB_WORKSPACE" 2>&1 | tee "$SPIKE_OUT/size-report.log"
       - name: Capture environment
         if: always()
         run: |
-          uname -a
-          node -p 'process.versions'
-          ldd --version | head -1
-          df -h "$GITHUB_WORKSPACE" | tail -1
+          { uname -a; node -p 'process.versions'; ldd --version | head -1; df -h "$GITHUB_WORKSPACE" | tail -1; } | tee "$SPIKE_OUT/host-env.log"
+      - name: Publish results
+        if: always()
+        run: .github/workflows/spike-publish.sh "desktop-host"
+
+env:
+  SPIKE_OUT: /tmp/spike-out
