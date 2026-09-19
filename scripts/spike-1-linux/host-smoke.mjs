@@ -22,8 +22,13 @@ rmSync(scratch, { recursive: true, force: true })
 const projectDir = join(scratch, 'project')
 const payloadDir = join(scratch, 'payload')
 mkdirSync(projectDir, { recursive: true })
-// The profile manifest must exist; an empty bundle list is valid.
-writeFileSync(join(projectDir, 'package.json'), `${JSON.stringify({ name: 'spike-project', private: true })}\n`)
+// The profile manifest must exist; desktop initializes it with the web profile
+// bundle list (apps/desktop/src/project-manager.ts WEB_PROFILE).
+writeFileSync(join(projectDir, 'package.json'), `${JSON.stringify({
+  name: 'spike-project',
+  private: true,
+  dsh: { profile: { bundles: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-web-app'] } },
+})}\n`)
 mkdirSync(payloadDir, { recursive: true })
 mkdirSync(join(payloadDir, 'primary-runtime'), { recursive: true })
 // office.ts resolves the skill asset root as dirname(source)/office-skills.
