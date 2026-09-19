@@ -34,7 +34,7 @@ jobs:
           npm init -y >/dev/null
           npm install --no-audit --no-fund node-pty@1.2.0-beta.15 koffi@3.1.1 2>&1 | tee "$SPIKE_OUT/install-node${{ matrix.node }}.log"
       - name: Run native smoke
-        run: node "$GITHUB_WORKSPACE/scripts/spike-1-linux/native-smoke.mjs" 2>&1 | tee "$SPIKE_OUT/smoke-node${{ matrix.node }}.log"
+        run: set -o pipefail; node "$GITHUB_WORKSPACE/scripts/spike-1-linux/native-smoke.mjs" 2>&1 | tee "$SPIKE_OUT/smoke-node${{ matrix.node }}.log" || echo "smoke exited non-zero (recorded in log)"
         working-directory: ~/native-spike
       - name: Record environment
         run: |
@@ -68,9 +68,9 @@ jobs:
         env:
           DSH_TELEMETRY_DISABLED: '1'
       - name: desktop-host boot smoke
-        run: node "$GITHUB_WORKSPACE/scripts/spike-1-linux/host-smoke.mjs" "$GITHUB_WORKSPACE" 2>&1 | tee "$SPIKE_OUT/host-smoke.log"
+        run: set -o pipefail; node "$GITHUB_WORKSPACE/scripts/spike-1-linux/host-smoke.mjs" "$GITHUB_WORKSPACE" 2>&1 | tee "$SPIKE_OUT/host-smoke.log" || echo "host smoke exited non-zero (recorded in log)"
       - name: Preliminary size report
-        run: node "$GITHUB_WORKSPACE/scripts/spike-1-linux/size-report.mjs" "$GITHUB_WORKSPACE" 2>&1 | tee "$SPIKE_OUT/size-report.log"
+        run: set -o pipefail; node "$GITHUB_WORKSPACE/scripts/spike-1-linux/size-report.mjs" "$GITHUB_WORKSPACE" 2>&1 | tee "$SPIKE_OUT/size-report.log" || echo "size report exited non-zero (recorded in log)"
       - name: Capture environment
         if: always()
         run: |
