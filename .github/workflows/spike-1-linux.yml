@@ -12,7 +12,6 @@ on:
 
 permissions:
   contents: write
-
 env:
   SPIKE_OUT: /tmp/spike-out
 
@@ -80,5 +79,3 @@ jobs:
         if: always()
         run: .github/workflows/spike-publish.sh "desktop-host"
 
-env:
-  SPIKE_OUT: /tmp/spike-out
