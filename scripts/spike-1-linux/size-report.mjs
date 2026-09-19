@@ -11,7 +11,7 @@
  * Usage: node size-report.mjs <upstreamRoot>
  */
 
-import { readdirSync, statSync, readFileSync, writeFileSync, rmSync } from 'node:fs'
+import { readdirSync, statSync, readFileSync, writeFileSync, rmSync, existsSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { execFileSync } from 'node:child_process'
@@ -25,6 +25,7 @@ const packages = []
 for (const entry of readdirSync(virtualStore, { withFileTypes: true })) {
   if (!entry.isDirectory()) continue
   const inner = join(virtualStore, entry.name, 'node_modules')
+  if (!existsSync(inner)) continue
   for (const pkg of readdirSync(inner, { withFileTypes: true })) {
     const pkgDir = join(inner, pkg.name)
     if (pkg.name.startsWith('@')) {

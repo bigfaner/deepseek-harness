@@ -66,7 +66,7 @@ jobs:
           DSH_TELEMETRY_DISABLED: '1'
           CI: 'true'
       - name: Build host libraries
-        run: npm run build:lib:host 2>&1 | tee "$SPIKE_OUT/host-build.log"
+        run: npm run build:lib 2>&1 | tee "$SPIKE_OUT/host-build.log"
         env:
           DSH_TELEMETRY_DISABLED: '1'
       - name: desktop-host boot smoke
