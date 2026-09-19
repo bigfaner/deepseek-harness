@@ -1,7 +1,8 @@
 
-> @deepseek-ai/dsh-root@0.1.6-alpha.2 build:lib:host
-> node --max-old-space-size=4096 ./node_modules/typescript/bin/tsc -b tsconfig.host.json && tsdown --env.DSH_BUILD_FACE host
+> @deepseek-ai/dsh-root@0.1.6-alpha.2 build:lib
+> pnpm run build:lib:host && pnpm run build:lib:client
 
+$ node --max-old-space-size=4096 ./node_modules/typescript/bin/tsc -b tsconfig.host.json && tsdown --env.DSH_BUILD_FACE host
 vendor/hmr/src/error.ts(2,35): error TS2307: Cannot find module 'esbuild' or its corresponding type declarations.
 vendor/hmr/src/error.ts(3,34): error TS2307: Cannot find module '@babel/code-frame' or its corresponding type declarations.
 vendor/hmr/src/index.ts(5,56): error TS2307: Cannot find module 'chokidar' or its corresponding type declarations.
@@ -388,3 +389,4 @@ website/tests/code-groups.spec.ts(6,40): error TS2307: Cannot find module 'vitep
 website/tests/mermaid-viewer.spec.ts(4,37): error TS2307: Cannot find module '@panzoom/panzoom' or its corresponding type declarations.
 website/tests/page-markdown-actions.spec.ts(4,91): error TS2307: Cannot find module 'vue' or its corresponding type declarations.
 website/tests/page-markdown-actions.spec.ts(5,32): error TS2307: Cannot find module 'vue/server-renderer' or its corresponding type declarations.
+[ELIFECYCLE] Command failed with exit code 2.
