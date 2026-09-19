@@ -1,0 +1,390 @@
+
+> @deepseek-ai/dsh-root@0.1.6-alpha.2 build:lib:host
+> node --max-old-space-size=4096 ./node_modules/typescript/bin/tsc -b tsconfig.host.json && tsdown --env.DSH_BUILD_FACE host
+
+vendor/hmr/src/error.ts(2,35): error TS2307: Cannot find module 'esbuild' or its corresponding type declarations.
+vendor/hmr/src/error.ts(3,34): error TS2307: Cannot find module '@babel/code-frame' or its corresponding type declarations.
+vendor/hmr/src/index.ts(5,56): error TS2307: Cannot find module 'chokidar' or its corresponding type declarations.
+vendor/hmr/src/index.ts(12,23): error TS2307: Cannot find module 'picomatch' or its corresponding type declarations.
+vendor/hmr/src/index.ts(123,16): error TS7006: Parameter 'path' implicitly has an 'any' type.
+vendor/hmr/src/index.ts(129,38): error TS7006: Parameter 'path' implicitly has an 'any' type.
+vendor/hmr/src/index.ts(166,31): error TS7006: Parameter 'error' implicitly has an 'any' type.
+packages/ssh/ssh/src/helper-processes.ts(13,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/src/helper-processes.ts(133,35): error TS2339: Property 'path' does not exist on type 'Endpoint'.
+packages/ssh/ssh/src/helper-processes.ts(133,62): error TS2339: Property 'capability' does not exist on type 'Endpoint'.
+packages/ssh/ssh/src/helper-processes.ts(200,66): error TS2322: Type '{ [k: string]: {} | undefined; }' is not assignable to type 'Dict<string>'.
+  'string' index signatures are incompatible.
+    Type '{} | undefined' is not assignable to type 'string | undefined'.
+      Type '{}' is not assignable to type 'string'.
+packages/ssh/ssh/src/helper-processes.ts(420,34): error TS2353: Object literal may only specify known properties, and 'path' does not exist in type 'Endpoint'.
+packages/ssh/ssh/src/helper.ts(15,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/src/index.ts(9,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/src/index.ts(83,15): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/ssh/ssh/src/index.ts(280,9): error TS18046: 'hello' is of type 'unknown'.
+packages/ssh/ssh/src/index.ts(281,9): error TS18046: 'hello' is of type 'unknown'.
+packages/ssh/ssh/src/protocol.ts(6,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/src/protocol.ts(35,47): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/ssh/ssh/src/schemas.ts(2,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/src/schemas.ts(10,52): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/ssh/ssh/src/schemas.ts(12,55): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/ssh/ssh/src/schemas.ts(15,52): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/ssh/ssh/src/schemas.ts(42,35): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/ssh/ssh/src/schemas.ts(55,20): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/ssh/fs-ssh/src/index.ts(11,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/fs-ssh/src/index.ts(61,19): error TS18046: 'next' is of type 'unknown'.
+packages/ssh/fs-ssh/src/index.ts(62,15): error TS18046: 'next' is of type 'unknown'.
+packages/ssh/fs-ssh/src/index.ts(62,44): error TS18046: 'next' is of type 'unknown'.
+packages/ssh/fs-ssh/src/index.ts(71,19): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(arrayBuffer: ArrayBufferLike, byteOffset?: number | undefined, length?: number | undefined): Buffer<ArrayBufferLike>', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'number'.
+  Overload 2 of 4, '(string: WithImplicitCoercion<string>, encoding?: BufferEncoding | undefined): Buffer<ArrayBuffer>', gave the following error.
+    Argument of type 'ArrayBufferLike' is not assignable to parameter of type 'WithImplicitCoercion<string>'.
+      Type 'ArrayBuffer' is not assignable to type 'WithImplicitCoercion<string>'.
+packages/ssh/fs-ssh/src/index.ts(75,19): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(arrayBuffer: ArrayBufferLike, byteOffset?: number | undefined, length?: number | undefined): Buffer<ArrayBufferLike>', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'number'.
+  Overload 2 of 4, '(string: WithImplicitCoercion<string>, encoding?: BufferEncoding | undefined): Buffer<ArrayBuffer>', gave the following error.
+    Argument of type 'ArrayBufferLike' is not assignable to parameter of type 'WithImplicitCoercion<string>'.
+      Type 'ArrayBuffer' is not assignable to type 'WithImplicitCoercion<string>'.
+packages/ssh/subprocess-ssh/src/index.ts(12,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/subprocess-ssh/src/index.ts(95,21): error TS18046: 'result' is of type 'unknown'.
+packages/ssh/subprocess-ssh/src/index.ts(97,26): error TS18046: 'result' is of type 'unknown'.
+packages/ssh/subprocess-ssh/src/index.ts(102,26): error TS18046: 'result' is of type 'unknown'.
+packages/ssh/subprocess-ssh/src/index.ts(102,59): error TS18046: 'result' is of type 'unknown'.
+packages/ssh/subprocess-ssh/src/index.ts(119,15): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/subprocess-ssh/src/index.ts(121,56): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/subprocess-ssh/src/index.ts(200,5): error TS2322: Type 'unknown' is not assignable to type 'boolean'.
+packages/ssh/subprocess-ssh/src/index.ts(269,27): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/ssh/subprocess-ssh/src/index.ts(299,16): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/subprocess-ssh/src/index.ts(303,67): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/subprocess-ssh/src/index.ts(310,113): error TS18046: 'result' is of type 'unknown'.
+packages/ssh/subprocess-ssh/src/index.ts(310,146): error TS18046: 'result' is of type 'unknown'.
+packages/ssh/subprocess-ssh/src/index.ts(315,14): error TS18046: 'started' is of type 'unknown'.
+packages/ssh/sandbox-ssh/src/index.ts(5,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/sandbox-ssh/src/index.ts(19,9): error TS2698: Spread types may only be created from object types.
+packages/ssh/sandbox-ssh/src/index.ts(20,29): error TS18046: 'confined' is of type 'unknown'.
+packages/ssh/sandbox-ssh/src/index.ts(20,61): error TS7006: Parameter 'rule' implicitly has an 'any' type.
+packages/typert/generator/src/emitter.ts(9,54): error TS2307: Cannot find module '@jridgewell/gen-mapping' or its corresponding type declarations.
+packages/test-support/session-snapshot/src/harness.ts(31,8): error TS2307: Cannot find module '@agentclientprotocol/sdk' or its corresponding type declarations.
+packages/test-support/session-snapshot/src/harness.ts(301,44): error TS7006: Parameter 'o' implicitly has an 'any' type.
+packages/test-support/session-snapshot/src/harness.ts(308,58): error TS7006: Parameter 'o' implicitly has an 'any' type.
+packages/test-support/session-snapshot/src/launcher.ts(39,8): error TS2307: Cannot find module '@agentclientprotocol/sdk' or its corresponding type declarations.
+packages/test-support/session-snapshot/src/launcher.ts(201,55): error TS7031: Binding element 'params' implicitly has an 'any' type.
+packages/test-support/session-snapshot/src/launcher.ts(222,61): error TS7031: Binding element 'params' implicitly has an 'any' type.
+packages/experimental/inspector/src/worker/bridge/endpoint.ts(6,63): error TS2307: Cannot find module 'ws' or its corresponding type declarations.
+packages/experimental/inspector/src/worker/bridge/endpoint.ts(125,60): error TS7006: Parameter 'ws' implicitly has an 'any' type.
+packages/experimental/inspector/src/worker/bridge/endpoint.ts(133,63): error TS7006: Parameter 'ws' implicitly has an 'any' type.
+packages/experimental/inspector/src/worker/bridge/endpoint.ts(156,27): error TS7006: Parameter 'data' implicitly has an 'any' type.
+packages/experimental/inspector/src/worker/bridge/endpoint.ts(189,27): error TS7006: Parameter 'data' implicitly has an 'any' type.
+packages/subagent/subagent-acp/src/run.ts(18,8): error TS2307: Cannot find module '@agentclientprotocol/sdk' or its corresponding type declarations.
+packages/subagent/subagent-acp/src/run.ts(422,55): error TS7031: Binding element 'params' implicitly has an 'any' type.
+packages/subagent/subagent-acp/src/run.ts(431,61): error TS7031: Binding element 'params' implicitly has an 'any' type.
+packages/subagent/subagent-acp/src/run.ts(436,43): error TS7006: Parameter 'o' implicitly has an 'any' type.
+packages/subagent/subagent-claude-code/src/process.ts(12,8): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+packages/subagent/subagent-claude-code/src/run.ts(17,8): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+apps/desktop/src/directory-picker.ts(3,53): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/directory-picker.ts(12,52): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/directory-picker.ts(25,10): error TS7031: Binding element 'canceled' implicitly has an 'any' type.
+apps/desktop/src/directory-picker.ts(25,20): error TS7031: Binding element 'filePaths' implicitly has an 'any' type.
+apps/desktop/src/fatal-recovery.ts(3,63): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/ipc.ts(3,41): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/main.ts(20,8): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/main.ts(92,94): error TS2339: Property 'resourcesPath' does not exist on type 'Process'.
+apps/desktop/src/main.ts(95,22): error TS2339: Property 'resourcesPath' does not exist on type 'Process'.
+apps/desktop/src/main.ts(142,46): error TS7031: Binding element 'url' implicitly has an 'any' type.
+apps/desktop/src/main.ts(146,42): error TS7006: Parameter '_event' implicitly has an 'any' type.
+apps/desktop/src/main.ts(146,52): error TS7031: Binding element 'isEditable' implicitly has an 'any' type.
+apps/desktop/src/main.ts(146,64): error TS7031: Binding element 'selectionText' implicitly has an 'any' type.
+apps/desktop/src/main.ts(146,79): error TS7031: Binding element 'editFlags' implicitly has an 'any' type.
+apps/desktop/src/main.ts(173,43): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/main.ts(173,50): error TS7006: Parameter 'url' implicitly has an 'any' type.
+apps/desktop/src/main.ts(212,76): error TS2503: Cannot find namespace 'Electron'.
+apps/desktop/src/main.ts(216,64): error TS2339: Property 'cancelId' does not exist on type 'UpdateDialogOptions'.
+apps/desktop/src/main.ts(217,64): error TS2353: Object literal may only specify known properties, and 'signal' does not exist in type 'UpdateDialogOptions'.
+apps/desktop/src/main.ts(237,42): error TS18048: 'navigation' is possibly 'undefined'.
+apps/desktop/src/main.ts(237,73): error TS18048: 'navigation' is possibly 'undefined'.
+apps/desktop/src/main.ts(253,24): error TS2339: Property 'resourcesPath' does not exist on type 'Process'.
+apps/desktop/src/main.ts(283,36): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'UpdateDialogOptions'.
+apps/desktop/src/main.ts(349,27): error TS2503: Cannot find namespace 'Electron'.
+apps/desktop/src/main.ts(398,28): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/desktop/src/main.ts(415,43): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/main.ts(422,43): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/main.ts(431,90): error TS7006: Parameter 'details' implicitly has an 'any' type.
+apps/desktop/src/main.ts(431,99): error TS7006: Parameter 'callback' implicitly has an 'any' type.
+apps/desktop/src/main.ts(445,43): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/main.ts(449,46): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/main.ts(453,50): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/main.ts(478,105): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'UpdateDialogOptions'.
+apps/desktop/src/main.ts(490,36): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'UpdateDialogOptions'.
+apps/desktop/src/main.ts(503,51): error TS2353: Object literal may only specify known properties, and 'title' does not exist in type 'UpdateDialogOptions'.
+apps/desktop/src/main.ts(542,55): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'UpdateDialogOptions'.
+apps/desktop/src/main.ts(548,41): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'UpdateDialogOptions'.
+apps/desktop/src/main.ts(585,22): error TS2339: Property 'resourcesPath' does not exist on type 'Process'.
+apps/desktop/src/main.ts(610,46): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/main.ts(644,48): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/main.ts(663,45): error TS7006: Parameter '_event' implicitly has an 'any' type.
+apps/desktop/src/main.ts(663,53): error TS7006: Parameter 'code' implicitly has an 'any' type.
+apps/desktop/src/main.ts(663,59): error TS7006: Parameter 'description' implicitly has an 'any' type.
+apps/desktop/src/main.ts(663,72): error TS7006: Parameter 'url' implicitly has an 'any' type.
+apps/desktop/src/main.ts(663,77): error TS7006: Parameter 'isMainFrame' implicitly has an 'any' type.
+apps/desktop/src/main.ts(668,45): error TS7006: Parameter '_event' implicitly has an 'any' type.
+apps/desktop/src/main.ts(668,53): error TS7006: Parameter '_path' implicitly has an 'any' type.
+apps/desktop/src/main.ts(668,60): error TS7006: Parameter 'error' implicitly has an 'any' type.
+apps/desktop/src/main.ts(671,51): error TS7006: Parameter '_event' implicitly has an 'any' type.
+apps/desktop/src/main.ts(671,59): error TS7006: Parameter 'details' implicitly has an 'any' type.
+apps/desktop/src/main.ts(699,26): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/mandatory-update-policy.ts(3,23): error TS2307: Cannot find module 'semver' or its corresponding type declarations.
+apps/desktop/src/mandatory-update-window.ts(3,88): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/mandatory-update-window.ts(66,43): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/mandatory-update-window.ts(67,43): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/mandatory-update-window.ts(157,27): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/mandatory-update-window.ts(160,47): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/mandatory-update-window.ts(160,54): error TS7006: Parameter 'url' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(3,40): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/policy-test-auth.ts(38,54): error TS7006: Parameter '_contents' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(38,65): error TS7006: Parameter '_permission' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(38,78): error TS7006: Parameter 'callback' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(41,46): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(42,53): error TS7006: Parameter 'details' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(42,62): error TS7006: Parameter 'callback' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(94,38): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(96,40): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(96,47): error TS7006: Parameter 'input' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(102,35): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(102,42): error TS7006: Parameter 'url' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(105,35): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(105,42): error TS7006: Parameter 'url' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(108,41): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(109,27): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(109,34): error TS7006: Parameter '_details' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(109,44): error TS7006: Parameter '_authInfo' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(109,55): error TS7006: Parameter 'callback' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(110,35): error TS7006: Parameter '_event' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(110,43): error TS7006: Parameter 'code' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(110,49): error TS7006: Parameter '_description' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(110,63): error TS7006: Parameter 'url' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(110,68): error TS7006: Parameter 'mainFrame' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(114,34): error TS7006: Parameter '_event' implicitly has an 'any' type.
+apps/desktop/src/policy-test-auth.ts(114,42): error TS7006: Parameter 'value' implicitly has an 'any' type.
+apps/desktop/src/preload-app.ts(3,44): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/preload-app.ts(15,31): error TS2503: Cannot find namespace 'Electron'.
+apps/desktop/src/preload-mandatory.ts(2,44): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/preload-mandatory.ts(11,29): error TS2503: Cannot find namespace 'Electron'.
+apps/desktop/src/preload-menu.ts(2,29): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/preload-theme.ts(3,29): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/preload-update-dialog.ts(2,44): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/preload-windows.ts(3,29): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/release.ts(3,23): error TS2307: Cannot find module 'semver' or its corresponding type declarations.
+apps/desktop/src/runtime-tree.ts(7,23): error TS2307: Cannot find module 'semver' or its corresponding type declarations.
+apps/desktop/src/update-attention.ts(2,55): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/update-coordinator.ts(5,21): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/update-coordinator.ts(6,86): error TS2307: Cannot find module 'electron-updater' or its corresponding type declarations.
+apps/desktop/src/update-coordinator.ts(7,27): error TS2307: Cannot find module 'semver' or its corresponding type declarations.
+apps/desktop/src/update-coordinator.ts(53,95): error TS2339: Property 'resourcesPath' does not exist on type 'Process'.
+apps/desktop/src/update-coordinator.ts(62,10): error TS7006: Parameter 'authInfo' implicitly has an 'any' type.
+apps/desktop/src/update-coordinator.ts(62,20): error TS7006: Parameter 'callback' implicitly has an 'any' type.
+apps/desktop/src/update-dialog.ts(2,122): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/update-dialog.ts(48,46): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/update-dialog.ts(49,48): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/update-dialog.ts(66,29): error TS2339: Property 'buttons' does not exist on type 'UpdateDialogOptions'.
+apps/desktop/src/update-dialog.ts(67,30): error TS2339: Property 'cancelId' does not exist on type 'UpdateDialogOptions'.
+apps/desktop/src/update-dialog.ts(68,34): error TS2339: Property 'signal' does not exist on type 'UpdateDialogOptions'.
+apps/desktop/src/update-dialog.ts(71,70): error TS2339: Property 'title' does not exist on type 'UpdateDialogOptions'.
+apps/desktop/src/update-dialog.ts(72,77): error TS2339: Property 'title' does not exist on type 'UpdateDialogOptions'.
+apps/desktop/src/update-dialog.ts(72,107): error TS2339: Property 'message' does not exist on type 'UpdateDialogOptions'.
+apps/desktop/src/update-dialog.ts(73,23): error TS2339: Property 'detail' does not exist on type 'UpdateDialogOptions'.
+apps/desktop/src/update-dialog.ts(80,17): error TS2339: Property 'signal' does not exist on type 'UpdateDialogOptions'.
+apps/desktop/src/update-dialog.ts(85,15): error TS2339: Property 'signal' does not exist on type 'UpdateDialogOptions'.
+apps/desktop/src/update-dialog.ts(87,47): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/desktop/src/update-dialog.ts(87,54): error TS7006: Parameter 'url' implicitly has an 'any' type.
+apps/desktop/src/update-http-executor.ts(2,38): error TS2307: Cannot find module 'electron-updater/out/electronHttpExecutor.js' or its corresponding type declarations.
+apps/desktop/src/update-http-executor.ts(3,53): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/update-http-executor.ts(18,12): error TS4112: This member cannot have an 'override' modifier because its containing class 'DesktopUpdateHttpExecutor' does not extend another class.
+apps/desktop/src/update-overlay.ts(2,31): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/src/update-overlay.ts(27,85): error TS7006: Parameter 'key' implicitly has an 'any' type.
+apps/cli/tests/profiles/acp/tests/control-surface.e2e.ts(31,32): error TS7006: Parameter 'candidate' implicitly has an 'any' type.
+apps/cli/tests/profiles/acp/tests/control-surface.e2e.ts(33,41): error TS7006: Parameter 'candidate' implicitly has an 'any' type.
+apps/cli/tests/profiles/acp/tests/control-surface.e2e.ts(34,32): error TS7006: Parameter 'candidate' implicitly has an 'any' type.
+apps/cli/tests/profiles/acp/tests/escalation.e2e.ts(92,42): error TS7006: Parameter 'o' implicitly has an 'any' type.
+apps/desktop/scripts/cos-operation.ts(4,22): error TS2307: Cannot find module 'cos-nodejs-sdk-v5' or its corresponding type declarations.
+apps/desktop/scripts/desktop-cos.ts(3,17): error TS2307: Cannot find module 'cos-nodejs-sdk-v5' or its corresponding type declarations.
+apps/desktop/scripts/desktop-upload-plan.ts(8,28): error TS2307: Cannot find module 'semver' or its corresponding type declarations.
+apps/desktop/scripts/desktop-upload-run.ts(7,22): error TS2307: Cannot find module 'cos-nodejs-sdk-v5' or its corresponding type declarations.
+apps/desktop/scripts/installed-update-cos.ts(50,59): error TS18046: 'response' is of type 'unknown'.
+apps/desktop/scripts/installed-update-cos.ts(51,14): error TS18046: 'response' is of type 'unknown'.
+apps/desktop/scripts/installed-update-cos.ts(108,16): error TS18046: 'response' is of type 'unknown'.
+apps/desktop/scripts/installed-update-cos.ts(108,69): error TS18046: 'response' is of type 'unknown'.
+apps/desktop/scripts/installed-update-package-content.ts(7,49): error TS2307: Cannot find module 'app-builder-lib/out/asar/asar.js' or its corresponding type declarations.
+apps/desktop/scripts/installed-update-qualification.ts(5,27): error TS2307: Cannot find module 'semver' or its corresponding type declarations.
+apps/desktop/scripts/package-macos.ts(7,26): error TS2307: Cannot find module '@electron/notarize' or its corresponding type declarations.
+apps/desktop/scripts/prepare-primary-runtime.ts(10,24): error TS2307: Cannot find module 'extract-zip' or its corresponding type declarations.
+apps/desktop/scripts/prepare-primary-runtime.ts(11,33): error TS2307: Cannot find module 'tar' or its corresponding type declarations.
+apps/desktop/scripts/prepare-primary-runtime.ts(70,15): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+apps/desktop/scripts/prepare-runtime.ts(8,34): error TS2307: Cannot find module '@electron/get' or its corresponding type declarations.
+apps/desktop/scripts/prepare-runtime.ts(9,24): error TS2307: Cannot find module 'extract-zip' or its corresponding type declarations.
+apps/desktop/tests/cos-loopback.ts(5,22): error TS2307: Cannot find module 'cos-nodejs-sdk-v5' or its corresponding type declarations.
+apps/desktop/tests/desktop-upload-run.spec.ts(5,17): error TS2307: Cannot find module 'cos-nodejs-sdk-v5' or its corresponding type declarations.
+apps/desktop/tests/directory-picker.spec.ts(2,79): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/tests/fatal-recovery.spec.ts(2,40): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/tests/installed-update-cos.spec.ts(5,22): error TS2307: Cannot find module 'cos-nodejs-sdk-v5' or its corresponding type declarations.
+apps/desktop/tests/installer-packaging.spec.ts(3,32): error TS2307: Cannot find module 'electron-builder' or its corresponding type declarations.
+apps/desktop/tests/installer-packaging.spec.ts(4,26): error TS2307: Cannot find module 'app-builder-lib' or its corresponding type declarations.
+apps/desktop/tests/macos-signature.spec.ts(2,38): error TS2307: Cannot find module '@electron/notarize' or its corresponding type declarations.
+apps/desktop/tests/main-startup.spec.ts(3,41): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/tests/main-startup.spec.ts(7,68): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/tests/main-startup.spec.ts(122,43): error TS2503: Cannot find namespace 'Electron'.
+apps/desktop/tests/main-startup.spec.ts(237,60): error TS2503: Cannot find namespace 'Electron'.
+apps/desktop/tests/mandatory-update-window.spec.ts(3,36): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/tests/policy-test-auth.spec.ts(5,54): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/tests/primary-runtime-preparation.spec.ts(5,25): error TS2307: Cannot find module 'fflate' or its corresponding type declarations.
+apps/desktop/tests/update-attention.spec.ts(2,36): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/tests/update-coordinator.spec.ts(3,33): error TS2307: Cannot find module 'electron-updater' or its corresponding type declarations.
+apps/desktop/tests/update-dialog.spec.ts(2,36): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/tests/update-dialog.spec.ts(47,5): error TS2353: Object literal may only specify known properties, and 'message' does not exist in type 'UpdateDialogOptions'.
+apps/desktop/tests/update-dialog.spec.ts(128,5): error TS2353: Object literal may only specify known properties, and 'message' does not exist in type 'UpdateDialogOptions'.
+apps/desktop/tests/update-http-executor.spec.ts(3,36): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/tests/update-overlay.spec.ts(3,69): error TS2307: Cannot find module 'electron' or its corresponding type declarations.
+apps/desktop/tests/update-schedule.spec.ts(3,33): error TS2307: Cannot find module 'electron-updater' or its corresponding type declarations.
+benchmarks/long-session-browser/long-session.bench.ts(6,68): error TS2307: Cannot find module 'playwright' or its corresponding type declarations.
+benchmarks/long-session-browser/long-session.bench.ts(38,38): error TS7006: Parameter 'metric' implicitly has an 'any' type.
+benchmarks/long-session-browser/long-session.bench.ts(56,34): error TS7031: Binding element 'marker' implicitly has an 'any' type.
+benchmarks/long-session-browser/long-session.bench.ts(56,42): error TS7031: Binding element 'first' implicitly has an 'any' type.
+benchmarks/long-session-browser/long-session.bench.ts(56,49): error TS7031: Binding element 'done' implicitly has an 'any' type.
+benchmarks/long-session-browser/long-session.bench.ts(72,28): error TS7006: Parameter 'element' implicitly has an 'any' type.
+benchmarks/long-session-browser/long-session.bench.ts(72,37): error TS7006: Parameter 'markers' implicitly has an 'any' type.
+benchmarks/long-session-browser/long-session.bench.ts(76,40): error TS7006: Parameter 'event' implicitly has an 'any' type.
+benchmarks/long-session-browser/long-session.bench.ts(121,41): error TS7006: Parameter 'element' implicitly has an 'any' type.
+packages/experimental/inspector/tests/client-browser.e2e.ts(6,51): error TS2307: Cannot find module 'playwright' or its corresponding type declarations.
+packages/experimental/inspector/tests/client-browser.e2e.ts(7,41): error TS2307: Cannot find module 'ws' or its corresponding type declarations.
+packages/experimental/inspector/tests/client-browser.e2e.ts(31,27): error TS7006: Parameter 'data' implicitly has an 'any' type.
+packages/experimental/inspector/tests/cordis-tree.host.spec.ts(4,41): error TS2307: Cannot find module 'ws' or its corresponding type declarations.
+packages/experimental/inspector/tests/cordis-tree.host.spec.ts(43,27): error TS7006: Parameter 'data' implicitly has an 'any' type.
+packages/experimental/inspector/tests/debugger.e2e.ts(3,41): error TS2307: Cannot find module 'ws' or its corresponding type declarations.
+packages/experimental/inspector/tests/debugger.e2e.ts(22,27): error TS7006: Parameter 'data' implicitly has an 'any' type.
+packages/experimental/inspector/tests/integration.host.spec.ts(5,41): error TS2307: Cannot find module 'ws' or its corresponding type declarations.
+packages/experimental/inspector/tests/integration.host.spec.ts(24,27): error TS7006: Parameter 'data' implicitly has an 'any' type.
+packages/experimental/inspector/tests/plugin.host.spec.ts(5,41): error TS2307: Cannot find module 'ws' or its corresponding type declarations.
+packages/experimental/inspector/tests/plugin.host.spec.ts(61,29): error TS7006: Parameter 'data' implicitly has an 'any' type.
+packages/lsp/lsp-stdio/tests/connection.spec.ts(6,33): error TS2307: Cannot find module '@deepseek-ai/dsh-subprocess-local/src/spawn.ts' or its corresponding type declarations.
+packages/lsp/lsp-stdio/tests/instance.spec.ts(15,33): error TS2307: Cannot find module '@deepseek-ai/dsh-subprocess-local/src/spawn.ts' or its corresponding type declarations.
+packages/ssh/fs-ssh/tests/provider.spec.ts(7,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/sandbox-ssh/tests/provider.spec.ts(5,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/tests/collection.spec.ts(9,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/tests/collection.spec.ts(23,49): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/ssh/tests/collection.spec.ts(24,48): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/ssh/tests/collection.spec.ts(28,58): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/ssh/tests/collection.spec.ts(29,75): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/ssh/tests/collection.spec.ts(30,14): error TS18046: 'completed' is of type 'unknown'.
+packages/ssh/ssh/tests/collection.spec.ts(31,14): error TS18046: 'completed' is of type 'unknown'.
+packages/ssh/ssh/tests/collection.spec.ts(32,26): error TS18046: 'completed' is of type 'unknown'.
+packages/ssh/ssh/tests/collection.spec.ts(33,64): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/ssh/tests/collection.spec.ts(34,15): error TS18046: 'completed' is of type 'unknown'.
+packages/ssh/ssh/tests/connection-disposal.spec.ts(5,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/tests/fixtures/helper.ts(7,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/tests/helper-boundaries.spec.ts(8,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/tests/helper-boundaries.spec.ts(57,14): error TS18046: 'facts' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-boundaries.spec.ts(73,24): error TS18046: 'reservation' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-boundaries.spec.ts(96,14): error TS18046: 'next' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-boundaries.spec.ts(97,14): error TS18046: 'next' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-boundaries.spec.ts(222,56): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-boundaries.spec.ts(224,60): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(5,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(19,14): error TS18046: 'facts' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(37,169): error TS18046: 'created' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(38,160): error TS18046: 'updated' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(39,14): error TS18046: 'edited' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(52,14): error TS18046: 'target' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(58,26): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(arrayBuffer: WithImplicitCoercion<ArrayBufferLike>, byteOffset?: number | undefined, length?: number | undefined): Buffer<ArrayBufferLike>', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'WithImplicitCoercion<ArrayBufferLike>'.
+  Overload 2 of 4, '(string: WithImplicitCoercion<string>, encoding?: BufferEncoding | undefined): Buffer<ArrayBuffer>', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'WithImplicitCoercion<string>'.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(59,26): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(arrayBuffer: WithImplicitCoercion<ArrayBufferLike>, byteOffset?: number | undefined, length?: number | undefined): Buffer<ArrayBufferLike>', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'WithImplicitCoercion<ArrayBufferLike>'.
+  Overload 2 of 4, '(string: WithImplicitCoercion<string>, encoding?: BufferEncoding | undefined): Buffer<ArrayBuffer>', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'WithImplicitCoercion<string>'.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(61,14): error TS2571: Object is of type 'unknown'.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(61,95): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(75,15): error TS18046: 'next' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(76,16): error TS18046: 'next' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(79,14): error TS18046: 'next' is of type 'unknown'.
+packages/ssh/ssh/tests/helper-runtime.spec.ts(100,14): error TS18046: 'wrapped' is of type 'unknown'.
+packages/ssh/ssh/tests/identifiers.spec.ts(9,39): error TS2344: Type 'SshProcessId' does not satisfy the constraint 'never'.
+packages/ssh/ssh/tests/identifiers.spec.ts(10,38): error TS2344: Type 'SshTextStreamId' does not satisfy the constraint 'never'.
+packages/ssh/ssh/tests/identifiers.spec.ts(11,28): error TS2554: Expected 1 arguments, but got 0.
+packages/ssh/ssh/tests/identifiers.spec.ts(12,29): error TS2554: Expected 1 arguments, but got 0.
+packages/ssh/ssh/tests/live.e2e.ts(9,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/tests/live.e2e.ts(73,24): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/ssh/tests/live.e2e.ts(84,56): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/ssh/tests/live.e2e.ts(92,57): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/ssh/tests/live.e2e.ts(93,71): error TS18046: 'prepared' is of type 'unknown'.
+packages/ssh/ssh/tests/live.e2e.ts(94,14): error TS18046: 'result' is of type 'unknown'.
+packages/ssh/ssh/tests/management-capacity.spec.ts(4,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/tests/protocol-boundaries.spec.ts(4,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/tests/protocol-disposal.spec.ts(3,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/tests/protocol.spec.ts(4,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/ssh/tests/startup-behavior.spec.ts(6,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/subprocess-ssh/tests/process-behavior.spec.ts(5,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/subprocess-ssh/tests/shell-discovery.spec.ts(6,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/subprocess-ssh/tests/stream-wait-lifecycle.spec.ts(6,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/ssh/subprocess-ssh/tests/terminal-behavior.spec.ts(7,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/subagent/subagent-acp/tests/mock-acp-server.ts(84,8): error TS2307: Cannot find module '@agentclientprotocol/sdk' or its corresponding type declarations.
+packages/subagent/subagent-acp/tests/mock-acp-server.ts(239,43): error TS7031: Binding element 'params' implicitly has an 'any' type.
+packages/subagent/subagent-acp/tests/mock-acp-server.ts(240,51): error TS7031: Binding element 'params' implicitly has an 'any' type.
+packages/subagent/subagent-acp/tests/mock-acp-server.ts(244,44): error TS7031: Binding element 'params' implicitly has an 'any' type.
+packages/subagent/subagent-acp/tests/mock-acp-server.ts(245,47): error TS7031: Binding element 'params' implicitly has an 'any' type.
+packages/subagent/subagent-acp/tests/mock-acp-server.ts(245,55): error TS7031: Binding element 'client' implicitly has an 'any' type.
+packages/subagent/subagent-acp/tests/mock-acp-server.ts(246,52): error TS7031: Binding element 'params' implicitly has an 'any' type.
+packages/subagent/subagent-acp/tests/subagent-acp.spec.ts(18,33): error TS2307: Cannot find module '@deepseek-ai/dsh-subprocess-local/src/spawn.ts' or its corresponding type declarations.
+packages/subagent/subagent-acp/tests/subagent-acp.spec.ts(899,45): error TS2345: Argument of type 'SubprocessHandle | undefined' is not assignable to parameter of type 'SubprocessHandle'.
+  Type 'undefined' is not assignable to type 'SubprocessHandle'.
+packages/subagent/subagent-acp/tests/subagent-acp.spec.ts(933,38): error TS2345: Argument of type 'SubprocessHandle | undefined' is not assignable to parameter of type 'SubprocessHandle'.
+  Type 'undefined' is not assignable to type 'SubprocessHandle'.
+packages/subagent/subagent-acp/tests/subagent-acp.spec.ts(1070,9): error TS2322: Type '(spec: SubprocessSpawnSpec) => SubprocessHandle | undefined' is not assignable to type '(spec: SubprocessSpawnSpec) => SubprocessHandle'.
+  Type 'SubprocessHandle | undefined' is not assignable to type 'SubprocessHandle'.
+    Type 'undefined' is not assignable to type 'SubprocessHandle'.
+packages/subagent/subagent-claude-code/tests/real-product.spec.ts(19,8): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+packages/subagent/subagent-claude-code/tests/real-product.spec.ts(44,19): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+packages/subagent/subagent-claude-code/tests/subagent-claude-code.spec.ts(12,8): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+packages/subagent/subagent-claude-code/tests/subagent-claude-code.spec.ts(75,41): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+packages/terminal/tool-terminal/tests/tools.spec.ts(9,36): error TS2307: Cannot find module '@deepseek-ai/dsh-tools/src/ts-types.ts' or its corresponding type declarations.
+packages/test-support/session-snapshot/tests/harness.spec.ts(8,34): error TS2307: Cannot find module '@agentclientprotocol/sdk' or its corresponding type declarations.
+packages/typert/generator/tests/tools-catalog.spec.ts(8,50): error TS2307: Cannot find module '@deepseek-ai/dsh-tool-cordis/src/api-catalog.ts' or its corresponding type declarations.
+packages/typert/generator/tests/tools-catalog.spec.ts(51,36): error TS7006: Parameter 'candidate' implicitly has an 'any' type.
+packages/typert/generator/tests/tools-catalog.spec.ts(55,35): error TS7006: Parameter 'method' implicitly has an 'any' type.
+packages/typert/generator/tests/tools-catalog.spec.ts(63,35): error TS7006: Parameter 'event' implicitly has an 'any' type.
+packages/typert/generator/tests/tools-catalog.spec.ts(63,81): error TS7006: Parameter 'event' implicitly has an 'any' type.
+packages/typert/generator/tests/tools-catalog.spec.ts(70,21): error TS7006: Parameter 'type' implicitly has an 'any' type.
+website/.vitepress/code-groups.ts(3,51): error TS2307: Cannot find module 'vitepress' or its corresponding type declarations.
+website/.vitepress/code-groups.ts(25,53): error TS7019: Rest parameter 'args' implicitly has an 'any[]' type.
+website/.vitepress/config.ts(5,57): error TS2307: Cannot find module 'vitepress' or its corresponding type declarations.
+website/.vitepress/config.ts(6,36): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+website/.vitepress/config.ts(7,29): error TS2307: Cannot find module 'vitepress-plugin-mermaid' or its corresponding type declarations.
+website/.vitepress/config.ts(110,32): error TS7006: Parameter 'changed' implicitly has an 'any' type.
+website/.vitepress/config.ts(269,21): error TS7031: Binding element 'siteConfig' implicitly has an 'any' type.
+website/.vitepress/config.ts(347,25): error TS7006: Parameter 'server' implicitly has an 'any' type.
+website/.vitepress/config.ts(355,12): error TS7006: Parameter 'md' implicitly has an 'any' type.
+website/.vitepress/config.ts(363,33): error TS7019: Rest parameter 'args' implicitly has an 'any[]' type.
+website/.vitepress/config.ts(364,40): error TS7019: Rest parameter 'args' implicitly has an 'any[]' type.
+website/.vitepress/config.ts(366,34): error TS7019: Rest parameter 'args' implicitly has an 'any[]' type.
+website/.vitepress/theme/index.ts(2,26): error TS2307: Cannot find module 'vitepress/theme' or its corresponding type declarations.
+website/.vitepress/theme/index.ts(3,47): error TS2307: Cannot find module 'vitepress' or its corresponding type declarations.
+website/.vitepress/theme/index.ts(4,71): error TS2307: Cannot find module 'vue' or its corresponding type declarations.
+website/.vitepress/theme/mermaid-viewer.ts(2,21): error TS2307: Cannot find module '@panzoom/panzoom' or its corresponding type declarations.
+website/.vitepress/theme/page-markdown-actions.ts(2,93): error TS2307: Cannot find module 'vue' or its corresponding type declarations.
+website/.vitepress/theme/page-markdown-actions.ts(59,9): error TS7006: Parameter 'props' implicitly has an 'any' type.
+website/.vitepress/theme/page-markdown-actions.ts(82,18): error TS7006: Parameter 'visible' implicitly has an 'any' type.
+website/.vitepress/theme/page-markdown-actions.ts(82,27): error TS7006: Parameter '_previous' implicitly has an 'any' type.
+website/.vitepress/theme/page-markdown-actions.ts(82,38): error TS7006: Parameter 'onCleanup' implicitly has an 'any' type.
+website/.vitepress/theme/page-markdown-actions.ts(211,41): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ copy: string; copyDescription: string; view: string; viewDescription: string; newTab: string; menu: string; more: string; copying: string; copied: string; requestFailed: string; clipboardFailed: string; } | { ...; }'.
+website/build.ts(6,23): error TS2307: Cannot find module 'vitepress' or its corresponding type declarations.
+website/build.ts(66,26): error TS7006: Parameter 'siteConfig' implicitly has an 'any' type.
+website/raw-markdown.ts(2,30): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+website/raw-markdown.ts(14,11): error TS7006: Parameter 'req' implicitly has an 'any' type.
+website/raw-markdown.ts(14,16): error TS7006: Parameter 'res' implicitly has an 'any' type.
+website/raw-markdown.ts(14,21): error TS7006: Parameter 'next' implicitly has an 'any' type.
+website/tests/code-groups.spec.ts(6,40): error TS2307: Cannot find module 'vitepress' or its corresponding type declarations.
+website/tests/mermaid-viewer.spec.ts(4,37): error TS2307: Cannot find module '@panzoom/panzoom' or its corresponding type declarations.
+website/tests/page-markdown-actions.spec.ts(4,91): error TS2307: Cannot find module 'vue' or its corresponding type declarations.
+website/tests/page-markdown-actions.spec.ts(5,32): error TS2307: Cannot find module 'vue/server-renderer' or its corresponding type declarations.
