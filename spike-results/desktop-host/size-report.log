@@ -1,17 +1,1 @@
-node:fs:1631
-  const result = binding.readdir(
-                         ^
-
-Error: ENOENT: no such file or directory, scandir '/home/runner/work/deepseek-harness/deepseek-harness/node_modules/.pnpm/node_modules/node_modules'
-    at readdirSync (node:fs:1631:26)
-    at file:///home/runner/work/deepseek-harness/deepseek-harness/scripts/spike-1-linux/size-report.mjs:28:21
-    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
-    at async node:internal/modules/esm/loader:647:26
-    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
-  errno: -2,
-  code: 'ENOENT',
-  syscall: 'scandir',
-  path: '/home/runner/work/deepseek-harness/deepseek-harness/node_modules/.pnpm/node_modules/node_modules'
-}
-
-Node.js v24.20.0
+SPIKE_RESULT {"phase":"size-report","dshVersion":"0.1.6-alpha.2","closurePackages":2896,"closureFiles":181873,"totalBytes":2861697402,"policyKeptBytes":2169290985,"policyDroppedBytes":692406417,"note":"preliminary: whole filtered-install virtual store incl. some dev tooling; policy simulated for linux-x64"}
