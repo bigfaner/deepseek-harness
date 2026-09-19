@@ -1,25 +1,36 @@
 #!/usr/bin/env bash
-# Commit the tee'd step logs back to the spike branch for external reading.
+# Upload the tee'd step logs to spike-results/ via the contents API
+# (checkout@v4 leaves a detached HEAD, so a plain pull/push loop is fragile).
 set -uo pipefail
 group="$1"
-cd "$GITHUB_WORKSPACE"
-git config user.name "spike-bot"
-git config user.email "spike@example.invalid"
-mkdir -p "spike-results/$group"
-cp -v /tmp/spike-out/* "spike-results/$group/" || true
-git add spike-results || true
-if git diff --cached --quiet; then
-  echo "nothing to publish"
-  exit 0
-fi
-git commit -m "spike results: $group (run $GITHUB_RUN_ID)"
-for attempt in 1 2 3 4 5; do
-  if git pull --rebase "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" spike/1.1-linux; then
-    if git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:spike/1.1-linux"; then
-      exit 0
+api="https://api.github.com/repos/${GITHUB_REPOSITORY}/contents"
+auth="Authorization: Bearer ${GITHUB_TOKEN}"
+for file in /tmp/spike-out/*; do
+  [ -f "$file" ] || continue
+  name="$(basename "$file")"
+  path="spike-results/${group}/${name}"
+  body=$(python3 - "$file" "$path" <<'PY'
+import base64, json, os, sys
+content = base64.b64encode(open(sys.argv[1], 'rb').read()).decode()
+print(json.dumps({
+    'message': f"spike results: {os.environ.get('GITHUB_RUN_ID', '')} {sys.argv[2]}",
+    'content': content,
+    'branch': 'spike/1.1-linux',
+}))
+PY
+  )
+  for attempt in 1 2 3 4 5; do
+    existing=$(curl -sf -H "$auth" "$api/$path?ref=spike/1.1-linux" || true)
+    if [ -n "$existing" ]; then
+      sha=$(printf '%s' "$existing" | python3 -c 'import json,sys; print(json.load(sys.stdin)["sha"])')
+      body=$(printf '%s' "$body" | python3 -c "import json,sys; d=json.load(sys.stdin); d['sha']=sys.argv[1]; print(json.dumps(d))" "$sha")
     fi
-  fi
-  sleep $((attempt * 10))
+    if curl -sf -X PUT -H "$auth" -H 'Accept: application/vnd.github+json' -d "$body" "$api/$path" >/dev/null; then
+      echo "published $path"
+      break
+    fi
+    echo "retry $attempt for $path"
+    sleep $((attempt * 5))
+  done
 done
-echo "publish failed after retries"
-exit 1
+echo done
